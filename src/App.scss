@@ -1,0 +1,32 @@
+.app-wrapper {
+  color: #4d4d4d;
+  min-width: 230px;
+  max-width: 550px;
+  margin: 0 auto;
+
+  .container {
+    padding: 16px 0 0;
+
+    .title {
+      font-size: 100px;
+      font-weight: 100;
+      text-align: center;
+      color: rgba(175, 47, 47, 0.15);
+      margin-bottom: 16px;
+      text-rendering: optimizeLegibility;
+    }
+
+    .app {
+      background-color: #fff;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .info {
+      margin: 65px auto 0;
+      color: #bfbfbf;
+      font-size: 12px;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+      text-align: center;
+    }
+  }
+}

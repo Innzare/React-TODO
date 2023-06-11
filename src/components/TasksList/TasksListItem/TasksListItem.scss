@@ -1,0 +1,123 @@
+.tasks-list-item {
+  position: relative;
+  max-height: 58px;
+  border-bottom: 1px solid #ededed;
+  font-size: 24px;
+  word-break: break-all;
+  line-height: 1.2;
+  transition: color 0.4s;
+  user-select: none;
+
+  &__text {
+    padding: 15px 45px 15px 60px;
+  }
+
+  &__edit {
+    position: relative;
+    display: none;
+
+    input {
+      width: 100%;
+      height: 100%;
+      padding: 14px 40px 14px 16px;
+      border: 1px solid #999;
+      font-size: 24px;
+      font-family: inherit;
+      font-weight: inherit;
+      line-height: 1.4em;
+      color: inherit;
+      box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &__edit-enter {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    &:hover {
+      svg {
+        fill: #000;
+      }
+    }
+  }
+
+  .toggle-task {
+    display: none;
+
+    & ~ label {
+      position: absolute;
+      left: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+      border: 1px solid #ededed;
+      border-radius: 50%;
+      transition: border-color 0.15s ease;
+      cursor: pointer;
+
+      &:hover {
+        border-color: #dfdfdf;
+      }
+    }
+
+    &:checked {
+      & ~ label {
+        border-color: #bddad5;
+        background-image: url('Src/assets/img/doneIcon.svg');
+        background-repeat: no-repeat;
+        background-position: 70% 50%;
+      }
+    }
+  }
+
+  &__remove {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    height: 100%;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 30px;
+    color: #cc9a9a;
+    transition: color 0.25s ease;
+
+    &:hover {
+      color: #af5b5e;
+    }
+  }
+
+  &:hover {
+    .tasks-list-item__remove {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &--editing {
+    padding-left: 43px;
+
+    .tasks-list-item__text {
+      display: none;
+    }
+
+    .tasks-list-item__edit {
+      display: block;
+    }
+  }
+
+  &--completed {
+    color: #d9d9d9;
+    text-decoration: line-through;
+  }
+
+  &--last {
+    border-bottom: none;
+  }
+}
